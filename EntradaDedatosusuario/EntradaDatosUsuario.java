@@ -1,9 +1,10 @@
 /*
-Como hemos visto en sesiones anteriores es posible captar la entrada
-de datos a partir de readline(), que es un metodo de la consola o la entrada
-
-
-*/
+Como hemos visto en anteriores sesiones es posible captar
+la entrada de datos a partir de readLine(),  que es un metodo
+de la consola o la entrada estandar de la computadora;
+pero que tal si quiero saber el tipo de dato que se esta 
+introduciendo, para ello necesito un obj especial
+*/ 
 //libreria
 import java.util.Scanner; //solo lo que se ocupa
 import java.util.*; //Mandando a llamar a toda la libreria
@@ -20,11 +21,11 @@ String nombre;
 int edad; 
 float altura;
 
-System.out.println("Escribe tu nombre");
+System.out.println("Escribe tu nombre:");
 nombre=entrada.nextLine();
-System.out.println("Escribe tu edad");
+System.out.println("Escribe tu edad:");
 edad=entrada.nextInt();
-System.out.println("Escribe tu estatura");
+System.out.println("Escribe tu estatura:");
 altura=entrada.nextFloat();
 
 System.out.println("Tu nombre es: "+nombre);
