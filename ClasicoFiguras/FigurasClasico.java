@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class figurasClasico{
+class FigurasClasico{
 
     /*
     vamos a crear un programa que se encargue de realizar
@@ -30,9 +30,9 @@ class figurasClasico{
     do{
         //el cuerpo del programa
         System.out.println("Elija la opcion deseada: ");
-        System.out.println("1.- Calcular el area de un cuadrado ");
-        System.out.println("2.- Calcular el area de un triangulo ");
-        System.out.println("3.- Calcular el area de un circulo ");
+        System.out.println("1.- Calcular el area y perimetro de un cuadrado ");
+        System.out.println("2.- Calcular el area y perimetro de un triangulo ");
+        System.out.println("3.- Calcular el area y perimetro de un circulo ");
         System.out.println("4.- Calcular el area y perimetro del rectangulo ");
         System.out.println("5.- Calcular el area y el perimetro del pentagono ");
         System.out.println("6.- Salir ");
@@ -47,10 +47,11 @@ class figurasClasico{
                 //aqui es donde realizamos las operaciones
                 System.out.println("Ingresa el valor del lado");
                 base = entrada.nextInt();
+                resultado=base*4;
+                System.out.println("El perimetro del cuadrado es de: "+resultado);
 
                 resultado = base*base;
-
-                System.out.println("El area y el perimetro del cuadrado es de: "+resultado);
+                System.out.println("El area  del cuadrado es de: "+resultado);
                 break;
 
             case 2:
@@ -59,12 +60,7 @@ class figurasClasico{
                 System.out.println("Ingresa el valor de la altura");
                 altura = entrada.nextInt();
 
-
-                System.out.println("Ingresa el valor de un lado");
-                lado1 = entrada.nextInt();
-                System.out.println("Ingresa el valor del otro lado");
-                lado2 = entrada.nextInt();
-                resultado=lado1+lado2+base;
+                resultado=(altura*2)+(base*2);
                 System.out.println("El perimetro es: "+resultado);
 
                 resultado = (base*altura)/2;
@@ -75,39 +71,36 @@ class figurasClasico{
                 System.out.println("Ingresa el valor de la radio");
                 base = entrada.nextInt();
 
-                resultado=base*2
-                Sytem.out.println("El valor de la circunferencia es de: "+resultado);
+                resultado=base*2;
+                System.out.println("El valor de la circunferencia es de: "+resultado);
 
                 resultado = 3.1416*base*base;
                 System.out.println("El area del circulo es de: "+resultado);
                 break;
 
-             case 4
-                System.out.println("Inserta el valor del lado mayor");
+             case 4:
+                System.out.println("Inserta el valor de la base");
                 base=entrada.nextInt();
                 System.out.println("Ingresa el valor de la altura");
                 lado1=entrada.nextInt();
                 resultado=base*lado1;
                 System.out.println("El area del rectangulo es de: "+resultado);
 
-                base=base*2
-                System.out.println("Ingrese el valor de los otros lados");
-                lado2=entrada.nextInt();
-                lado2=lado*2
-                resultado=lado2+base
-                System.out.println("El perimetro del rectangulo es: "+resultado);
 
-             case 5
+                resultado=(lado1*2)+(base*2);
+                System.out.println("El perimetro del rectangulo es: "+resultado);
+                break;
+             case 5:
                 System.out.println("Dame el valor de la base");
-                base=entrada.next.Int();
-                resultado=base*5
-                System.out.println("El perimetro del pentagono es: ");
+                base=entrada.nextInt();
+                resultado=base*5;
+                System.out.println("El perimetro del pentagono es: "+resultado);
                 System.out.println("Ingresa el valor de la apotema");
                 lado1=entrada.nextInt();
-                resultado=(base*5)
-                resultado=(resultado*lado1)/2
+                resultado=(base*5);
+                resultado=(resultado*lado1)/2;
                 System.out.println("El area del pentagono: "+resultado);
-
+                break;
             default:
                 System.out.println("Besitos ");
 
@@ -117,7 +110,7 @@ class figurasClasico{
 
         }
 
-        System.out.println("¿Deseas repetir el programa?, si lo desea escriba s");
+        System.out.println("¿Deseas repetir el programa?, si lo desea escriba, 's' ");
         //recibir una respuesta de si o no
         //booleano o un char s
         letra = entrada.next().charAt(0);
