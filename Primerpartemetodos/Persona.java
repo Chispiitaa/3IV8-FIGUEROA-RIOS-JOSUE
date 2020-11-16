@@ -9,7 +9,7 @@ public class Persona{
     private int mes2;
     private int resultado;
     private int resultado2;
-    private int cont;
+    
 
     //metodos
     public void llamarEdad() {
