@@ -5,6 +5,7 @@ public class Menu{
 
     //Atributos
     private int opc;
+    private char repe;
 
     //Indice de los programas
     public void indice(){
@@ -38,16 +39,28 @@ public class Menu{
         //Creamos el switch del indice
         switch (opc) {
             case 1:
+                do{ 
                 //llamamos a los metodos de la clase Persona
                 personita.llamarEdad();
+                System.out.println("Si desea repetir el caso, digite 't', de lo contrario, digite 'e'");
+                repe = entrada.next()charAt(0);
+                }while(repe == 't');
             break;
             case 2:
+                do{ 
                 //llamamos alos metodos de la clase Figuras
                 figuritas.meFiguras();
+                System.out.println("Si desea repetir el caso, digite 't', de lo contrario, digite 'e'");
+                repe = entrada.next()charAt(0);
+                }while(repe == 't');
             break;
             case 3:
+                do{ 
                 //llamamos a los metodos de la clase Compania
                 pequenita.meCompania();
+                System.out.println("Si desea repetir el caso, digite 't', de lo contrario, digite 'e'");
+                repe = entrada.next()charAt(0);
+                }while(repe == 't');
             break;
             default:
             System.out.println("No lo olvides, 'El dolor y el sacrificio llevan a un mejor entendimiento'.");   

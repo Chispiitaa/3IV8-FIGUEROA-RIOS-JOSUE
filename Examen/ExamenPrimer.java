@@ -18,7 +18,7 @@ class ExamenPrim{
         System.out.println("2.- Informacion del pokemon 'bulbasaor'."); 
         System.out.println("3.- Informacion del pokemon 'squartle'."); 
         System.out.println("4.- 'Batalla Pokemon.'.");
-        System.out.println("4.- Salir.");
+        System.out.println("5.- Salir.");
         opcion=leer.nextInt();
         switch (opcion) {
             case 1:
