@@ -13,7 +13,7 @@ public class Tortuga extends Animal{
     }
 
     //recibe obtiene
-    public int getTipoCaparazon(){
+    public String getTipoCaparazon(){
         return tipo_caparazon;
     }
     //envia u establecer
@@ -22,7 +22,7 @@ public class Tortuga extends Animal{
     }
 
     public void mostrarTortuga(){
-        System.out.println("El nombre del gato es: " + getNombre()
+        System.out.println("El nombre de la tottuga es: " + getNombre()
                             + " su raza es: " + getRaza()
                             + " come: " + getTipoAlimento()
                             + " su edad es de: " + getEdad()

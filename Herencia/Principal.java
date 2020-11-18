@@ -13,8 +13,9 @@ public class Principal{
 
         Perro dog = new Perro("Teddy", "Callejero", "Croquetas", 2, "fuerte");
         Gato cat = new Gato("Miau", "Hogareño", "atun", 1, 7);
-        Perico per = new Perico("Pancrasio", "Hogañero", "Pistache", 3, "Grosero")
-        Tortuga tor = new Trotuga("");
+        Perico per = new Perico("Pancrasio", "Hogañero", "Pistache", 3, "Grosero");
+        Tortuga tor = new Tortuga("Valencia", "Mar", "Cochitos", 50, "fuerte");
+        Hamster ham = new Hamster("Juan", "Hogareño", "Lechuga", 4, "mucho");
         //dog.setNombre(variable);
 
         //los metodos
@@ -25,5 +26,7 @@ public class Principal{
         per.mostrarPerico();
         System.out.println("-------");
         tor.mostrarTortuga();
+        System.out.println("-------");
+        ham.mostrarHamster();
     }
 }

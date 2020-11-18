@@ -13,7 +13,7 @@ public class Hamster extends Animal{
     }
 
     //recibe obtiene
-    public int getHamster(){
+    public String getHamster(){
         return elasticidad;
     }
     //envia u establecer
@@ -22,10 +22,10 @@ public class Hamster extends Animal{
     }
 
     public void mostrarHamster(){
-        System.out.println("El nombre del gato es: " + getNombre()
+        System.out.println("El nombre del Hamster es: " + getNombre()
                             + " su raza es: " + getRaza()
                             + " come: " + getTipoAlimento()
                             + " su edad es de: " + getEdad()
-                            + " su tipo de caparazon es: " + getHamster());
+                            + " su elasticidad: " + getHamster());
     }
 }

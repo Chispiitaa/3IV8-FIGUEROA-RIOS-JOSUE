@@ -13,7 +13,7 @@ public class Perico extends Animal{
     }
 
     //recibe obtiene
-    public int getHabla(){
+    public String getHabla(){
         return habla;
     }
     //envia u establecer
