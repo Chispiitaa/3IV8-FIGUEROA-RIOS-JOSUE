@@ -17,7 +17,7 @@ public class Perico extends Animal{
         return habla;
     }
     //envia u establecer
-    public void setHabla(int num_vidas){
+    public void setHabla(String habla){
         this.habla = habla;
     }
 

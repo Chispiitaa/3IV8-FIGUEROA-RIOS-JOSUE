@@ -25,10 +25,5 @@ public class Principal{
         per.mostrarPerico();
         System.out.println("-------");
         tor.mostrarTortuga();
-
-        
-        
-        
-        
     }
 }

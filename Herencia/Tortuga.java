@@ -17,7 +17,7 @@ public class Tortuga extends Animal{
         return tipo_caparazon;
     }
     //envia u establecer
-    public void setTipoCaparazon(int num_vidas){
+    public void setTipoCaparazon(String tipo_caparazon){
         this.tipo_caparazon = tipo_caparazon;
     }
 
