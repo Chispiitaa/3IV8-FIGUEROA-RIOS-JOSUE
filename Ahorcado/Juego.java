@@ -1,548 +1,93 @@
 /*
-
 En esta parte realizaremos el juego, teniendo en cuenta las intrucciones dadas
 */
-import java.util.Scanner; 
+import java.util.Scanner;
 
+public class Juego{
 
-public class Juego{ 
+    private String palabra;
 
+    //El metodo del ahorcado
+    public void ahorcado(){
+        //Creamos el objeto 
+        Scanner entrada = new Scanner(System.in);
 
-   public void pedirDatos() 
-
-   { 
-
-
-      Scanner sc = new Scanner(System.in); 
-
-
-      //Creando variables 
-
-
-      int intentos=5,W=0; 
-
-
-      boolean VD=true,w=true; 
-
-
-      int rep=0; 
-
-
-      //Ingresando palabra para buscar 
-
-
-     System.out.println("Ingrese palabra"); 
-
-
-      String palabra=sc.nextLine(); 
-
-
-      System.out.println("\n\n"); 
-
-
-      String letra[]=new String[5]; 
-
-
-      //separando String en letras 
-
-
-      String [] letras =palabra.split(""); 
-
-
-      String intento[] = new String[letras.length]; 
-
-
-      String ingresadas[] = new String[letras.length]; 
-
-
-      //Asignando tamaño de letras a la variable W 
-
-
-      W=letras.length; 
-
-
-      for(int i=0;i<25;i++){System.out.println("");} 
-
-
-      for(int i=0;i<letras.length;i++){ 
-
-
-         intento[i]="_ ";//Asignando lineas de la palabra ingresada asi 
-
-
-//la variable intento 
-
-
-                                            } 
-
-
-       //Teniendo 5 intentos mientras no se acaben se repetiran las, 
-
-
-//siguientes acciones 
-
-
-      while(intentos>0) 
-
-
-      {   
-
-
-        System.out.println("Ingrese letra"); 
-
-
-        for(int i=0;i<letras.length;i++) 
-
-
-                 {    //Mostrando lineas de la palabra ingresada 
-
-
-                     System.out.print(intento[i]); 
-
-
-                                             }  
-
-
-        System.out.println(""); 
-
-
-        letra[0]=sc.nextLine();rep=0;boolean aviso=true; 
-
-
-        for(int i=0;i<letras.length;i++) 
-
-
-           { 
-
-
-             w=true; 
-
-
-            //si la letra ingresada se encuentra en parte 
-
-
-//de las letras que forman parte de la palabra 
-
-
-            //ingresada entrara 
-
-
-            if(letras[i].equals(letra[0])) 
-
-
-            {  //si la pabra no fue ingresada antes entrara 
-
-
-               if(!intento[i].equals(letra[0])){ 
-
-
-                  //Asignando a la variable intento la letra ingresada 
-
-
-                  intento[i]=letra[0]; 
-
-
-                  VD=false; 
-
-
-                  rep++; ingresadas[i]=letras[0];  
-
-
-                  }else{aviso=false;VD=false;} 
-
-
-            } 
-
-
-                                                     }  
-
-
-             //en caso ya se aiga introducido x 
-
-
-//letra que ya estaba aparecera este mensaje 
-
-
-             if(aviso==false)
-
-
-{
-
-
-System.out.println(" Aviso: Ya ingresaste esa letra ");
-
-
-} 
-
-
-             aviso=true;        
-
-
-             if(VD==true) 
-
-
-             { //reduciendo intentos 
-
-
-               intentos--; 
-
-
-             } 
-
-
-             else{W=W-rep;} 
-
-
-System.out.println(" \nQuedan: "+intentos+" Intentos"); 
-
-
-             //llamando la funcion impresion que dibuja el ahorcado 
-
-
-             impresion(intentos); 
-
-if(intentos==0)
-
-
-{
-
-
-System.out.println("\nLastima Perdiste\nLa palabra es: "+palabra);
-
-
-} 
-
-
-if(W<=0){
-
-
-System.out.println(palabra+"\nFelicidades ganaste, Bien echo.");intentos=0;} 
-
-
-             VD=true;rep=0; 
-
-
-                      
-
-
-
-
-
-            
-
-
-          } 
-
-
-   } 
-
-
-     //void impresion void que usare para imprimir el dibujo del ahorcado 
-
-
-   static void impresion(int VD) 
-
-
-   { 
-
-
-    if(VD==5) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------"); 
-
-
-            }   
-
-
-            
-
-
-    if(VD==4) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   0   "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------");        
-
-
-    }      
-
-
-       
-
-
-    if(VD==3) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   0   "); 
-
-
-        System.out.println("    |  /    "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |    \\ "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------");        
-
-
-    }                
-
-
-       
-
-
-    if(VD==2) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   0   "); 
-
-
-        System.out.println("    |  /|   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |    \\ "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------");        
-
-
-    } 
-
-
-       
-
-
+        //Creando variables
+        int num_intentos=5, asignacion=0;
+        boolean verdad=true, w=true;
+        int rep=0;
         
-
-
+        
+        //Vamos a introducir la palabra secreta
+        System.out.println("\nIngrese la palabra, para adivinar, crack.");
+        palabra = entrada.nextLine();
+        System.out.println("\n");
+        String letra[] = new String[5];
        
-
-
-    if(VD==1) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   0   "); 
-
-
-        System.out.println("    |   |\\ "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |  / \\   "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------");        
-
-
-    } 
-
-
-    
-
-
-    if(VD==0) 
-
-
-    { 
-
-
-        System.out.println("    -----   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |   0   "); 
-
-
-        System.out.println("    |  /|\\ "); 
-
-
-        System.out.println("    |   |   "); 
-
-
-        System.out.println("    |  / \\   "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("    |       "); 
-
-
-        System.out.println("------------");        
-
-
-    }    
-
-
-    }   
-
-
-  }
-
-   
-
-
-
+        //Separamos la cadena son "split"
+        String [] letras = palabra.split("");
+        String intento [] = new String[letras.length];
+        String ingresadas [] = new String[letras.length];
+
+        //Aqui, le asignamos a una variable los espacios de la letra
+        asignacion=letras.length;
+        for(int i=0;i<letras.length;i++){
+         intento[i]="* ";
+        }
+
+        //Aqui le pedimos al usuario que ingrese la letra
+        while(num_intentos>0){   
+        System.out.println("Digite 'UNA' letra, gracias.");
+        for(int i=0;i<letras.length;i++){    
+        System.out.print(intento[i]);
+        }  
+        System.out.println("");
+        letra[0]=entrada.nextLine();
+        rep=0;
+        boolean aviso=true;
+        for(int i=0;i<letras.length;i++){
+        w=true;
+
+         //Si el usuario ingresa una letra de las que se encuentran en la palabra secreta.    
+        if(letras[i].equals(letra[0])){  
+            if(!intento[i].equals(letra[0])){
+                intento[i]=letra[0];
+                verdad=false;
+                rep++; 
+                ingresadas[i]=letras[0];  
+                }else{
+                aviso=false;
+                verdad=false;
+                }
+            }
+        }
+
+        //Si el usuario ya ingreso una letra y la repite, dar un aviso
+        if(aviso==false){
+        System.out.println("Mi pana, usted, ya ingreso esta letra. Intente de nuevo.");
+        }
+        aviso=true;        
+        if(verdad==true){ 
+        num_intentos--;
+        }else{
+        asignacion -= rep;
+        }
+        System.out.println(" \nColega, las tortillas son : "+num_intentos);
+
+             //llamamos a impresion, para que me imprima y evalue las condiciones
+             Operaciones ope = new Operaciones();
+             ope.mostrarResultado(num_intentos);
+            if(num_intentos==0){
+            System.out.println("\nYa no tienes mas tortillas, ni modo brocoli.\nLa palabra era: "+palabra);
+            }
+            if(asignacion<=0){
+            System.out.println("\nMi pana, el trinunfo es la primera etapa de una vida con drogas.");
+            num_intentos=0;
+            }
+             
+        }
+        
+    }
+
+   //Hecho por josue figueroa     
+}
