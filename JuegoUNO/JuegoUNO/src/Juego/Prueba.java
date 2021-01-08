@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Juego;
 
 /**
@@ -15,6 +11,8 @@ import java.util.Collections;
 
 public class Prueba{
 	public static void main(String[] args) {
+            InicioJuego iniciar = new InicioJuego();
+            iniciar.setVisible(true);
 		int numJugadores=0;
 		Baraja b1= new Baraja();
 		Scanner teclado=new Scanner(System.in);
