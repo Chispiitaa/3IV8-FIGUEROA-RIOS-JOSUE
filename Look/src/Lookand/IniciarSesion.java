@@ -5,6 +5,8 @@
  */
 package Lookand;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Josue
@@ -39,7 +41,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hola.png"))); // NOI18N
-        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 400, 190));
+        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 400, 190));
 
         lblInicioNombre.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         lblInicioNombre.setText("Introduzca su nombre de usuario:");
@@ -52,6 +54,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         getContentPane().add(txtInicioRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 320, 20));
 
         btnIniciarSesion.setText("Inciar Sesión");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
         btnIniciarRegistrarse.setText("Registrarse");
@@ -76,10 +83,23 @@ public class IniciarSesion extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnIniciarRegistrarseActionPerformed
 
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        String nombre = txtInicioRegistrarse.getText();
+        String password = txtInicioCotrasea.getText();
+        ControlarPersona obj = new ControlarPersona();
+        obj.buscar(nombre);
+        
+        
+        
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
     /**
      * @param args the command line arguments
      */
-   
+   public static void main(String[] args){
+       IniciarSesion abrir = new IniciarSesion();
+       abrir.setVisible(true);
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;

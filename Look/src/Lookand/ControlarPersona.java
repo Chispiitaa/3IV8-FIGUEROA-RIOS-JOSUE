@@ -10,42 +10,66 @@ import javax.swing.JOptionPane;
  */
 public class ControlarPersona {
     
-    private static ArrayList<Usuario> datos = new ArrayList();
+    private  ArrayList<Usuario> datos = new ArrayList();
     
-    public static void agregar(Usuario persona){
+    public  void agregar(Usuario persona){
         datos.add(persona);
     }
     
-    public static Usuario buscar(String usuario){
-    
-        Usuario buscando = new Usuario() {};
+    public int buscar(String nombre){
+        int posBuscando = 0;
+        String nombreBusca;
         
-        for(Usuario elemento: datos){
-
-            if(usuario != elemento.getNombre()){
-                JOptionPane.showMessageDialog(null, "NO SE ENCUENTRA REGISTRO DEL USUARIO.");
-            }else{
-                buscando = elemento;
-            }
-
-        }
-            return buscando;
         
+        
+        nombreBusca = nombre;
+        
+        //puedo ocupar mi metodo para buscarlo a partir de la posicion
+        posBuscando = traePosicion(nombreBusca);
+        
+        //mando imprimir
+        
+        System.out.println("Nombre: " + datos.get(posBuscando).getNombre());
+        
+        
+        return posBuscando;
     }
+
     
-    public static void eliminar(Usuario eliminar){
+    public int traePosicion(String nombreBuscar){
+        int pos = 0;
+        boolean existe = false;
+        
+        //recorrer la lista del array
+        for(int i = 0; i < datos.size(); i++){
+            if(nombreBuscar.equals(datos.get(i).getNombre())){
+                pos = i;
+                existe = true;
+            }else{
+                JOptionPane.showMessageDialog(null, "USUARIO NO ENCONTRADO");
+            }
+        }
+        if(!existe){
+            System.out.println("NO HAY REGISTRO DE USUARIO");
+            pos = -1;
+        }
+        return pos;
+    }
+
+    
+    public  void eliminar(Usuario eliminar){
         datos.remove(eliminar);
         JOptionPane.showMessageDialog(null, "USUARIO ELIMINADO CON ÉXITO.");
     }
     
-    public static void modificar(Usuario actualizado){
-        Usuario actualizar = buscar(actualizado.getNombre());
+    public  void modificar(Usuario actualizado){
+        int actualizar = buscar(actualizado.getNombre());
         datos.remove(actualizar);
         datos.add(actualizado);
         JOptionPane.showMessageDialog(null, "SE HA ACTUALIZADO CON ÉXITO");
     }
     
-    public static ArrayList<Usuario> mostrar(){
+    public  ArrayList<Usuario> mostrar(){
         return datos;
     }
     

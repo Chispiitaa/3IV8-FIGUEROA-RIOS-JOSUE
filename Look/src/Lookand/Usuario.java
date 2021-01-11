@@ -42,25 +42,5 @@ public  class Usuario implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public static int veificarUsuario(){
-        ArrayList lista = mostrar();
-        return 0;
-    }
-    
-    public static int verificarUsuario(String usuario){
-        ArrayList lista = mostrar();
-        Usuario obj;
-        for (int i = 0; i < lista.size(); i++) {
-            obj = (Usuario)lista.toArray();
-        }
-    }
-    
-    /**
-     *
-     * @return
-     */
-    public static ArrayList mostrar(){
-        return ControlarPersona.mostrar();
-    }
+   
 }
