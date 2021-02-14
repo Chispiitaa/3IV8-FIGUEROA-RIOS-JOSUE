@@ -86,9 +86,15 @@ public class IniciarSesion extends javax.swing.JFrame {
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         String nombre = txtInicioRegistrarse.getText();
         String password = txtInicioCotrasea.getText();
-        ControlarPersona obj = new ControlarPersona();
-        obj.buscar(nombre);
-        
+        Usuario obj = new Usuario();
+        int pos = obj.verificarUsuario(nombre, password);
+        if(pos ==-1){
+            JOptionPane.showMessageDialog(this, "NO HAY REGISTRO DEL USUARIO");
+        }else{
+          AñadirTarea abrir = new AñadirTarea();
+          abrir.setVisible(true);
+        }
+       
         
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed

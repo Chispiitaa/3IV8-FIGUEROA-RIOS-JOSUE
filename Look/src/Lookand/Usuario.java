@@ -17,6 +17,7 @@ public  class Usuario implements Serializable {
     
     private String nombre;
     private String password;
+    ControlarPersona control = new ControlarPersona();
     
     public Usuario(){
     
@@ -41,6 +42,22 @@ public  class Usuario implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+     public int verificarUsuario(String nombre, String password){
+        ArrayList<Usuario> lista = mostrar();
+        Usuario obj;
+        for (int i = 0; i < lista.size(); i++) {
+            obj = lista.get(i);
+        if(obj.getNombre().equalsIgnoreCase(nombre) && obj.getPassword().equals(password)){
+            return i;
+        }
+        }
+        return -1;
+    }
+    
+    public  ArrayList mostrar(){
+        return control.mostrar();
     }
    
 }
